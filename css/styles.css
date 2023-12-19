@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #009e92 ,#a8dce3, #009e92 
+    );
+    color: #cca;
+    font-family: fantasy;
+   
+  }
+
+
+.anthony  {
+    border-radius: 50%;
+    width: 400px;
+    height: auto;
+    box-shadow: 0 0 30px grey;
+   
+}
+
+.rose {
+    border-radius: 80%;
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 0 30px plum;
+}
+
+h1 {
+    color: #FF00FF;
+    position: center;
+    text-shadow: 0 0 30px paleturquoise;
+}
+
+p {
+    color: red;
+    text-shadow: black  0 -2px;
+    font-size: larger;
+    position: center;
+    text-align: center;
+
+}
+
+.resume{
+    color: #027017;
+    border: thick double #32a1ce;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: paleturquoise;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: fantasy;
+}
+
+nav ul li a:hover {
+    color: #009688;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+}
