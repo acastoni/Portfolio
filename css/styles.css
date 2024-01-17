@@ -58,8 +58,9 @@ footer {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  display: inline-block;
+  display: block;
   align-items: center;
+  text-align: center;
   position: relative; /* Required for pseudo-element positioning */
 }
 
@@ -203,5 +204,4 @@ ul {
 
 .resume {
   color: #8a93e6;
-  
 }
