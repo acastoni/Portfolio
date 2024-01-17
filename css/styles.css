@@ -22,7 +22,7 @@ body {
 }
 
 .anthony {
-  width: 200px;
+  width: 300px;
   border-radius: 50%;
   height: auto;
   box-shadow: 0 0 30px black;
@@ -171,11 +171,11 @@ footer a:hover {
 ul {
   list-style-type: none;
   font-size: 1.1rem;
-  color: #ff9a8b;
+  color: whitesmoke;
 }
 
 .language {
-  color: turquoise;
+  color: #8a93e6;
 }
 
 @keyframes gradientAnimation {
@@ -199,4 +199,9 @@ ul {
   width: 100%;
   max-width: 800px;
   padding: 0 40px;
+}
+
+.resume {
+  color: #8a93e6;
+  
 }
