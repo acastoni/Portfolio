@@ -1,4 +1,11 @@
-/*CSS*/
+html {
+  box-sizing: border-box;
+  height: 100%; 
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -7,7 +14,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: #49585b;
+  background: #0e0e29;
   color: #cca;
   font-family: "Humane", sans-serif;
 }
@@ -19,49 +26,15 @@ body {
   box-shadow: 0 0 30px black;
 }
 
-h1 {
+h1, h2 {
   color: whitesmoke;
   text-align: center;
-  /* text-shadow: 0 0 30px black; */
 }
 
 p {
-  color: red;
-  text-shadow: black 0 -2px;
-  font-size: extra-large;
+  color: #cca; 
   text-align: center;
-}
-
-nav {
-  position: fixed; /* Fix the entire nav */
-  top: 0;
-  margin-top: 20px;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Ensures the nav is above other elements */
-  background: #010b1400;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 0; /* Reset the margin for ul */
-  width: 100%; /* Ensure ul spans the full width */
-}
-nav ul li {
-  margin: 0 20px; /* Margin for li */
-}
-
-nav ul li a {
-  color: paleturquoise;
-  text-decoration: none;
-  font-size: 3rem;
-}
-
-nav ul li a:hover {
-  color: #009688;
+  font-size: large; /
 }
 
 section {
@@ -76,88 +49,96 @@ footer {
 
 .textAnimation {
   font-size: 2.5rem;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: left center;
-  }
-  50% {
-    background-position: right center;
-  }
-  100% {
-    background-position: left center;
-  }
-}
-
-.main {
-  display: flex;
-}
-
-.aboutMe {
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 1000px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: solid 4px transparent;
-  border-image: linear-gradient(to right, #ff9a8b, #8a93e6, #67b7c7) 1 round;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-basis: 33.33%;
-  text-align: center;
-  margin-right: auto;
-  margin-left: 10px;
-  flex: 1;
-}
-
-.experience {
-  flex: 2;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 500px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: solid 4px transparent;
-  border-image: linear-gradient(to right, #ff9a8b, #8a93e6, #67b7c7) 1 round;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-basis: 33.33%;
-  text-align: center;
-  margin-right: auto;
-  margin-left: 10px;
-}
-
-.projects {
-  flex: 3;
-
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 500px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: solid 4px transparent;
-  border-image: linear-gradient(to right, #ff9a8b, #8a93e6, #67b7c7) 1 round;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-basis: 33.33%;
-  text-align: center;
-  margin-right: auto;
-  margin-left: 10px;
-}
-
-.textAnimation {
   background-image: linear-gradient(to right, #ff9a8b, #8a93e6, #67b7c7);
   background-size: 200% 200%;
-  animation: gradientAnimation 2s ease infinite;
+  animation: gradientAnimation 3s ease infinite;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   display: inline-block;
 }
+
+.main {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  max-width: 100%;
+}
+
+/*CSS*/
+.aboutMe, .experience, .projects {
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 8px;
+  padding: 20px; 
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: solid 4px transparent;
+  border-image: linear-gradient(to right, #ff9a8b, #8a93e6, #67b7c7) 1 round;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: space-between; 
+  flex: 1;
+  min-width: 300px; 
+  min-height: 300px; 
+  height: auto; 
+}
+
+
+.aboutMe h2, .experience ul, .projects div {
+  flex-grow: 1;
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+}
+
+
+p, li {
+  line-height: 1.6; 
+}
+
+
+@media (max-width: 768px) {
+  .aboutMe, .experience, .projects {
+    padding: 20px;
+    margin: 20px auto;
+    height: auto; 
+  }
+}
+
+
+#spotlight {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  width: 800px; 
+  height: 800px; 
+  background: radial-gradient(circle, rgba(24, 24, 78, 0.4) 0%, rgba(19, 19, 114, 0) 80%);
+  transition: background 0.4s, width 0.4s, height 0.4s;
+  transform: translate(-50%, -50%);
+  top: 20%; 
+  left: 5%; 
+  display: block; 
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  
+}
+
+footer a {
+  color: grey;
+  text-decoration: none; 
+  margin: 0 10px; 
+  font-size: 2.2rem; 
+}
+
+footer a:hover {
+  color: whitesmoke
+}
+

@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Very cool website" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link href="https://fonts.cdnfonts.com/css/humane" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anthony Castillo's Portfolio" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.cdnfonts.com/css/humane" rel="stylesheet" />
 
-    <title>Anthony Castillo's Portfolio</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="projects.html">PROJECTS</a></li>
-          <li><a href="contact.html">CONTACT ME</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div class="main">
-      <div class="aboutMe">
-        <span class="textAnimation">ANTHONY CASTILLO</span>
-        <h1>Computer Science Student</h1>
-        <img class="anthony" src="images/Anthony.png" alt="Anthony's picture" />
-        <h2>
-          Hello, I'm Anthony, a computer science student at Florida
-          International University (FIU). I am currently a junior and I am
-          working as a software developer at FIU's Applied Research Center
-          (ARC).
-        </h2>
-      </div>
-      <div class="experience">
-        <h1>Experience</h1>
-      </div>
-      <div class="projects">
-        <h1>Projects</h1>
+  <title>Anthony Castillo's Portfolio</title>
+</head>
+<body>
+  <!-- Spotlight Div -->
+  <div id="spotlight"></div>
+
+  <div class="main">
+    <div class="aboutMe">
+      <span class="textAnimation">ANTHONY CASTILLO</span>
+      <h1>Computer Science Student</h1>
+      <img class="anthony" src="images/Anthony.png" alt="Anthony's picture" />
+      <h2>
+        Hello, I'm Anthony, a computer science student at Florida
+        International University (FIU). I am currently a junior and I am
+        working as a software developer at FIU's Applied Research Center
+        (ARC).
+      </h2>
     </div>
-  </body>
+    <div class="experience">
+      <span class="textAnimation">EXPERIENCE</span>
+      <ul>
+        <li><strong>Software Developer Intern</strong> - Florida International University, Applied Research Center (November 2023 - Present)</li>
+        <li><strong>Intern - Jr. Analyst</strong> - Florida International University, Security Research Hub (September 2023 - November 2023)</li>
+        <li><strong>IT Intern</strong> - City of Coral Gables, Department of Innovation and Technology (July 2023 - September 2023)</li>
+      </ul>
+      <p>For a more detailed look at my work experience and educational background, view my <a href="path/to/your/resume.pdf" target="_blank">full resume</a>.</p>
+    </div>
+    <div class="projects">
+      <span class="textAnimation">PROJECTS</span>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://github.com/acastoni" target="_blank">git/acastoni</a>
+    <a href="https://www.linkedin.com/in/anthonycastillo4/" target="_blank">in/anthonycastillo4</a>
+    <a href="mailto:anthonycastilloetho@gmail.com">anthonycastilloetho@gmail.com</a>
+  </footer>
+
+  <script>
+    document.addEventListener('mousemove', function(e) {
+      var spotlight = document.getElementById('spotlight');
+      spotlight.style.display = 'block'; // Show the spotlight
+      spotlight.style.left = e.pageX + 'px';
+      spotlight.style.top = e.pageY + 'px';
+    });
+
+  </script>
+</body>
 </html>
