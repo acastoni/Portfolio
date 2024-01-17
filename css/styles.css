@@ -1,8 +1,10 @@
 html {
   box-sizing: border-box;
-  height: 100%; 
+  height: 100%;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -14,7 +16,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: #0e0e29;
+  background: #050520;
   color: #cca;
   font-family: "Humane", sans-serif;
 }
@@ -26,15 +28,16 @@ body {
   box-shadow: 0 0 30px black;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: whitesmoke;
   text-align: center;
 }
 
 p {
-  color: #cca; 
+  color: #cca;
   text-align: center;
-  font-size: large; /
+  font-size: large;
 }
 
 section {
@@ -49,96 +52,151 @@ footer {
 
 .textAnimation {
   font-size: 2.5rem;
-  background-image: linear-gradient(to right, #ff9a8b, #8a93e6, #67b7c7);
+  background-image: linear-gradient(to left, #ff9a8b, #8a93e6, #67b7c7);
   background-size: 200% 200%;
   animation: gradientAnimation 3s ease infinite;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   display: inline-block;
+  align-items: center;
+  position: relative; /* Required for pseudo-element positioning */
+}
+
+.textAnimation::before {
+  content: attr(data-text); /* Use a data attribute to duplicate the text */
+  position: absolute;
+  left: 2px; /* Adjust shadow offset here */
+  top: 2px; /* Adjust shadow offset here */
+  z-index: -1;
+  background-image: linear-gradient(to left, #ff9a8b, #8a93e6, #67b7c7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: blur(2px); /* Adjust the blur for shadow effect */
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .main {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-around; 
+  flex-wrap: wrap;
+  justify-content: space-around;
   max-width: 100%;
+  flex: 1;
 }
 
-/*CSS*/
-.aboutMe, .experience, .projects {
+.aboutMe,
+.experience,
+.projects {
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 8px;
-  padding: 20px; 
-  margin: 10px;
+  padding: 20px;
+  margin-top: 120px;
+  margin-left: 20px;
+  margin-right: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: solid 4px transparent;
   border-image: linear-gradient(to right, #ff9a8b, #8a93e6, #67b7c7) 1 round;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: space-between; 
+  align-items: center;
+  justify-content: space-between;
   flex: 1;
-  min-width: 300px; 
-  min-height: 300px; 
-  height: auto; 
+  min-width: 300px;
+  min-height: 300px;
+  height: auto;
 }
 
-
-.aboutMe h2, .experience ul, .projects div {
+.aboutMe h2,
+.experience ul,
+.projects div {
   flex-grow: 1;
-  width: 100%; 
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around; 
+  justify-content: space-around;
 }
 
-
-p, li {
-  line-height: 1.6; 
+p,
+li {
+  line-height: 1.6;
 }
-
 
 @media (max-width: 768px) {
-  .aboutMe, .experience, .projects {
+  .aboutMe,
+  .experience,
+  .projects {
     padding: 20px;
     margin: 20px auto;
-    height: auto; 
+    height: auto;
   }
 }
 
-
 #spotlight {
-  position: fixed;
+  background-image: radial-gradient(
+    600px at var(--x, 500px) var(--y, 100px),
+    rgba(48, 48, 175, 0.15),
+    transparent 70%
+  );
+  position: absolute;
   pointer-events: none;
-  border-radius: 50%;
-  width: 800px; 
-  height: 800px; 
-  background: radial-gradient(circle, rgba(24, 24, 78, 0.4) 0%, rgba(19, 19, 114, 0) 80%);
-  transition: background 0.4s, width 0.4s, height 0.4s;
-  transform: translate(-50%, -50%);
-  top: 20%; 
-  left: 5%; 
-  display: block; 
+  transition: all;
+  z-index: 30;
+  inset: 0;
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
   width: 100%;
-  bottom: 0;
-  position: absolute;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
 }
 
 footer a {
   color: grey;
-  text-decoration: none; 
-  margin: 0 10px; 
-  font-size: 2.2rem; 
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 footer a:hover {
-  color: whitesmoke
+  color: whitesmoke;
 }
 
+ul {
+  list-style-type: none;
+  font-size: 1.1rem;
+  color: #ff9a8b;
+}
+
+.language {
+  color: turquoise;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bio {
+  display: flex;
+
+  align-items: center;
+  justify-content: left;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 40px;
+}
