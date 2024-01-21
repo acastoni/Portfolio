@@ -61,21 +61,21 @@ footer {
   display: block;
   align-items: center;
   text-align: center;
-  position: relative; /* Required for pseudo-element positioning */
+  position: relative; 
   font-family: '8BIT WONDER';
 }
 
 .textAnimation::before {
-  content: attr(data-text); /* Use a data attribute to duplicate the text */
+  content: attr(data-text); 
   position: absolute;
-  left: 2px; /* Adjust shadow offset here */
-  top: 2px; /* Adjust shadow offset here */
+  left: 2px; 
+  top: 2px; 
   z-index: -1;
   background-image: linear-gradient(to left, #ff9a8b, #8a93e6, #67b7c7);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: blur(2px); /* Adjust the blur for shadow effect */
+  filter: blur(2px); 
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -106,8 +106,6 @@ footer {
   align-items: center;
   justify-content: space-between;
   flex: 1;
-  min-width: 300px;
-  min-height: 300px;
   height: auto;
 }
 
@@ -194,7 +192,6 @@ ul {
 
 .bio {
   display: flex;
-
   align-items: center;
   justify-content: left;
   margin: 0 auto;
@@ -209,48 +206,105 @@ ul {
 
 .projects-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centers project boxes */
-  align-items: flex-start; /* Aligns boxes to the start of the cross axis */
-  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start; 
+  width: 100%;
 }
 
-.project {
+
+.project1 {
   background-color: #111935;
   color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: solid 4px transparent;
-  border-image: linear-gradient(to right, #ff9a8b, #8a93e6, #67b7c7) 1 round;
+  margin: 20px 0; 
+  display: flex;
+  align-items: center;
   padding: 1rem;
-  margin: 10px; /* Space around each project box */
-  transition: transform 0.3s ease;
+  background: linear-gradient(to bottom, #081447,  #081f41);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project2 {
+  background-color: #111935;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0; 
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #a2d9ff, #0091c2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project3 {
+  background-color: #111935;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0; 
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #007bff, #002f4b);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #081447,  #081f41);
+}
+
+.project2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #b3e0ff, #1a92d2);
+}
+
+.project3:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #3399ff, #003366);
+}
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+}
+
+.project-info h3, .project-info p {
+  margin: 0; 
+  color: whitesmoke; 
+}
+
+.project-info h3 {
+  font-size: 1.2rem; 
+  margin-bottom: 0.5rem; 
+  font-family: '8BIT WONDER';
+}
+
+.project-info p {
+  color: #cccccc; 
+  font-size: 1.1rem; 
   
-  /* Fixed width and height */
-  width: 200px; /* Adjust the width as needed */
-  height: 3 px; /* Adjust the height as needed */
-  
-  /* Remove any flex item properties that might affect the size */
-  /* flex: none; */ /* Uncomment if necessary */
 }
 
-.project img {
-  width: 5%; /* Image takes the full width of its container */
-  height: auto; /* Maintain aspect ratio of the image */
-  margin-bottom: 1rem; /* Space below the image */
-  box-shadow: 0 0 30px black;
-}
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.project h3, .project p {
-  color: whitesmoke; /* Match the color with the .experience section */
-  text-align: left; /* Align text to match the .experience section */
-}
+  .project img {
+    width: 80%; 
+    margin-bottom: 1rem;
+  }
 
-.project a {
-  color: #8a93e6; /* Link color to match the .experience section */
-  text-decoration: none; /* No underline for links */
+  .project-info {
+    align-items: center; 
+  }
 }
-
-.project a:hover {
-  color: #ff9a8b; /* Hover effect color */
-} 
