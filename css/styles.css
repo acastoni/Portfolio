@@ -157,7 +157,7 @@ footer {
 }
 
 footer a {
-  color: grey;
+  color: rgb(241, 241, 241);
   text-decoration: none;
   margin: 0 10px;
   font-size: 1.5rem;
@@ -165,7 +165,7 @@ footer a {
 }
 
 footer a:hover {
-  color: whitesmoke;
+  color: rgb(175, 218, 245);
 }
 
 ul {
@@ -177,6 +177,7 @@ ul {
 .language {
   color: #8a93e6;
 }
+
 
 @keyframes gradientAnimation {
   0% {
@@ -296,7 +297,7 @@ ul {
 }
 
 .project-info p {
-  color: #cccccc; 
+  color: #ffffff; 
   font-size: 1.1rem; 
   
 }
@@ -316,4 +317,21 @@ ul {
   .project-info {
     align-items: center; 
   }
+}
+
+.resumen {
+  align-items: center;
+  text-align: center;
+}
+
+li a{
+  color: whitesmoke;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 100px;
+}
+
+li a:hover {
+  color: rgb(175, 218, 245);
+  transform: scale(2.05);
 }
