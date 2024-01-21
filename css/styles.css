@@ -22,10 +22,10 @@ body {
 }
 
 .anthony {
-  width: 300px;
-  border-radius: 50%;
+  width: 250px;
   height: auto;
   box-shadow: 0 0 30px black;
+  border-radius: 50%;
 }
 
 h1,
@@ -62,6 +62,7 @@ footer {
   align-items: center;
   text-align: center;
   position: relative; /* Required for pseudo-element positioning */
+  font-family: '8BIT WONDER';
 }
 
 .textAnimation::before {
@@ -91,7 +92,7 @@ footer {
 .aboutMe,
 .experience,
 .projects {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial  , Helvetica, sans-serif;
   border-radius: 8px;
   padding: 20px;
   margin-top: 120px;
@@ -117,7 +118,7 @@ footer {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-around;  
 }
 
 p,
@@ -205,3 +206,51 @@ ul {
 .resume {
   color: #8a93e6;
 }
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers project boxes */
+  align-items: flex-start; /* Aligns boxes to the start of the cross axis */
+  padding: 10px;
+}
+
+.project {
+  background-color: #111935;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: solid 4px transparent;
+  border-image: linear-gradient(to right, #ff9a8b, #8a93e6, #67b7c7) 1 round;
+  padding: 1rem;
+  margin: 10px; /* Space around each project box */
+  transition: transform 0.3s ease;
+  
+  /* Fixed width and height */
+  width: 200px; /* Adjust the width as needed */
+  height: 3 px; /* Adjust the height as needed */
+  
+  /* Remove any flex item properties that might affect the size */
+  /* flex: none; */ /* Uncomment if necessary */
+}
+
+.project img {
+  width: 5%; /* Image takes the full width of its container */
+  height: auto; /* Maintain aspect ratio of the image */
+  margin-bottom: 1rem; /* Space below the image */
+  box-shadow: 0 0 30px black;
+}
+
+.project h3, .project p {
+  color: whitesmoke; /* Match the color with the .experience section */
+  text-align: left; /* Align text to match the .experience section */
+}
+
+.project a {
+  color: #8a93e6; /* Link color to match the .experience section */
+  text-decoration: none; /* No underline for links */
+}
+
+.project a:hover {
+  color: #ff9a8b; /* Hover effect color */
+} 
